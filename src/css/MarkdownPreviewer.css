@@ -1,0 +1,21 @@
+#markdown_box{
+    width: 100%;
+}
+
+#editor{
+    width: 90%;
+    margin: auto;
+    height: 100%;
+}
+
+#editor_box{
+    text-align: center;
+    height: 45vh;
+}
+
+#preview{
+    height: 45vh;
+    border: 1px solid black;
+    width: 90%;
+    margin: auto;
+}

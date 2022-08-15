@@ -1,2 +1,6 @@
+// QUOTES
 export const NEW_QUOTE = "NEW_QUOTE";
 export const FETCH_QUOTE = "FETCH_QUOTE";
+
+// MARKDOWN PREVIEWER
+export const KEY_PRESS = "KEY_PRESS"
