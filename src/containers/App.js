@@ -1,6 +1,6 @@
 import '../App.css';
-import React, { Component, Suspense } from 'react';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import React  from 'react';
+import { HashRouter, Routes, Route, Link } from "react-router-dom";
 
 // Import Different Projects 
 import QuoteMachine from '../containers/QuoteMachine';
@@ -19,24 +19,24 @@ function App() {
   return (
     <div className="App">
       
-      <BrowserRouter>
+      <HashRouter>
         <nav>  
           <ul>
-            <li><Link to="/frontendev-freecodecamp/QuoteMachine">Quotes</Link></li>
-            <li><Link to="/frontendev-freecodecamp/MarkdownPreviewer">MarkdownPreviewer</Link></li>
-            <li><Link to="/frontendev-freecodecamp/DrumMachine">DrumMachine</Link></li>
-            <li><Link to="/frontendev-freecodecamp/Calculator">Calculator</Link></li>
-            <li><Link to="/frontendev-freecodecamp/Clock">Clock</Link></li>
+            <li><Link to="/QuoteMachine">Quotes</Link></li>
+            <li><Link to="/MarkdownPreviewer">MarkdownPreviewer</Link></li>
+            <li><Link to="/DrumMachine">DrumMachine</Link></li>
+            <li><Link to="/Calculator">Calculator</Link></li>
+            <li><Link to="/Clock">Clock</Link></li>
           </ul>  
         </nav>
         <Routes>
-          <Route path="/frontendev-freecodecamp/QuoteMachine" element={<QuoteMachine />}></Route>
-          <Route path="/frontendev-freecodecamp/MarkdownPreviewer" element={<MarkdownPreviewer />}></Route>
-          <Route path="/frontendev-freecodecamp/DrumMachine" element={<DrumMachine />}></Route>
-          <Route path="/frontendev-freecodecamp/Calculator" element={<Calculator />}></Route>
-          <Route path="/frontendev-freecodecamp/Clock" element={<Clock />}></Route>
+          <Route path="/QuoteMachine" element={<QuoteMachine />}></Route>
+          <Route path="/MarkdownPreviewer" element={<MarkdownPreviewer />}></Route>
+          <Route path="/DrumMachine" element={<DrumMachine />}></Route>
+          <Route path="/Calculator" element={<Calculator />}></Route>
+          <Route path="/Clock" element={<Clock />}></Route>
         </Routes>
-      </BrowserRouter> 
+      </HashRouter> 
       
 
     </div>
