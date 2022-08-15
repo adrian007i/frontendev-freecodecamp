@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchQuotes } from '../actions';
+import { fetchQuotes, selectQuote } from '../actions';
 
 // maps the search field to the properties of the component
 const mapStateToProps = state => {
@@ -13,31 +13,34 @@ const mapStateToProps = state => {
 
 // allows us to use the onSearchChange function
 const matchDispatchToProps = dispatch => ({
-    onFetchQuotes: () => dispatch(fetchQuotes())
+    onFetchQuotes: () => dispatch(fetchQuotes()),
+    onSelectQuote: () => dispatch(selectQuote())
 });
 
 const QuoteMachine = (props) => {
 
-    const {onFetchQuotes} = props;
+    const { onFetchQuotes, onSelectQuote, text, author } = props;
 
-    useEffect(()=>{
-        onFetchQuotes()
-    }, [])
+
+    useEffect(() => {
+        onFetchQuotes();
+    }, []);
 
     return (
         <div className="app_block">
             <div id="quote-box" className="inner_app">
                 <div id="text">
-                    Life is what you make it.
+                    {text}
                 </div>
                 <div id="author">
-                    <div>Adrian John</div>
+                    <div>{author}</div>
+                </div>
+                <div>
+                    <button className="btn" id="new-quote" onClick={() => onSelectQuote()}>New Quote</button>
+                    <a className="btn" id="tweet-quote" href="twitter.com/intent/tweet" target="_blank">Tweet</a>
                 </div>
             </div>
-            <div>
-                <button className="btn" id="newQuote">New Quote</button>
-                <a className="btn" href="twitter.com/intent/tweet" target="_blank">Tweet</a>
-            </div>
+
         </div>
     )
 }
