@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/frontendev-freecodecamp/static/css/main.e9ea0b7e.css",
-    "main.js": "/frontendev-freecodecamp/static/js/main.9ad50e90.js",
+    "main.css": "/frontendev-freecodecamp/static/css/main.90ed6d4f.css",
+    "main.js": "/frontendev-freecodecamp/static/js/main.46aa2ae4.js",
     "static/js/787.f82a50ce.chunk.js": "/frontendev-freecodecamp/static/js/787.f82a50ce.chunk.js",
     "index.html": "/frontendev-freecodecamp/index.html",
-    "main.e9ea0b7e.css.map": "/frontendev-freecodecamp/static/css/main.e9ea0b7e.css.map",
-    "main.9ad50e90.js.map": "/frontendev-freecodecamp/static/js/main.9ad50e90.js.map",
+    "main.90ed6d4f.css.map": "/frontendev-freecodecamp/static/css/main.90ed6d4f.css.map",
+    "main.46aa2ae4.js.map": "/frontendev-freecodecamp/static/js/main.46aa2ae4.js.map",
     "787.f82a50ce.chunk.js.map": "/frontendev-freecodecamp/static/js/787.f82a50ce.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e9ea0b7e.css",
-    "static/js/main.9ad50e90.js"
+    "static/css/main.90ed6d4f.css",
+    "static/js/main.46aa2ae4.js"
   ]
 }
