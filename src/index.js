@@ -7,10 +7,9 @@ import {Provider} from 'react-redux';
 
 import './index.css';
 import App from './containers/App';
-import { quotesReducers } from './reducers';
-
+import {rootReducer} from './reducers/root'; 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const store = createStore(quotesReducers, applyMiddleware(thunkMiddleware))
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware))
 root.render(
   <React.StrictMode>
     <Provider store={store}>

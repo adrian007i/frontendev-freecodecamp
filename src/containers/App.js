@@ -9,6 +9,12 @@ import DrumMachine from '../containers/DrumMachine';
 import Calculator from '../containers/Calculator';
 import Clock from '../containers/Clock';
 
+// const QuoteMachine = React.lazy(() => import('../containers/QuoteMachine'));
+// const MarkdownPreviewer = React.lazy(() => import('../containers/MarkdownPreviewer'));
+// const DrumMachine = React.lazy(() => import('../containers/DrumMachine'));
+// const Calculator = React.lazy(() => import('../containers/Calculator'));
+// const Clock = React.lazy(() => import('../containers/Clock'));
+
 function App() {
   return (
     <div className="App">

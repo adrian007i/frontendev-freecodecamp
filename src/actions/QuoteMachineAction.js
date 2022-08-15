@@ -1,7 +1,7 @@
 import {
     FETCH_QUOTE,
     NEW_QUOTE
-} from "./constants";
+} from "../constants";
 
 export const fetchQuotes = () => (dispatch) => {
 
@@ -19,5 +19,3 @@ export const selectQuote = () => ({
 
 
 const rand = () => Math.floor(Math.random() * 1000);
-
-

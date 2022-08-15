@@ -1,7 +1,7 @@
 import {
     FETCH_QUOTE,
     NEW_QUOTE
-} from "./constants";
+} from "../constants";
 
 export const quotesReducers = (state = { quotes: [], text: "", author: "" }, action) => {
     switch (action.type) {

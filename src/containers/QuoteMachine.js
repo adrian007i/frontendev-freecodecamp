@@ -1,13 +1,14 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchQuotes, selectQuote } from '../actions';
+import { fetchQuotes, selectQuote } from '../actions/QuoteMachineAction';
+import "../css/QuoteMachine.css"
 
 // maps the search field to the properties of the component
 const mapStateToProps = state => {
     return {
-        text: state.text,
-        author: state.author,
-        quotes: state.quotes
+        text: state.quotesReducers.text,
+        author: state.quotesReducers.author,
+        quotes: state.quotesReducers.quotes
     }
 }
 
