@@ -1,0 +1,60 @@
+#calculator table{ 
+    font-weight: bold;
+}
+ 
+#calculator td{
+    padding: 20px;
+    border: 1px solid #333;
+    text-align: center;
+    vertical-align: middle;
+    color: #eee;
+    cursor: pointer;
+    
+}
+
+#calculator tbody td:hover{
+    opacity: .6;
+}
+
+.ac{
+    background-color: rgb(228, 57, 57);
+    
+}
+
+.number, .decimal{
+    background-color: #4d4d4d;
+    color:#fff;
+}
+
+.symbol{
+    background: rgb(102, 102, 102)
+}
+
+#equals{
+    background-color: rgb(0, 68, 102);
+}
+
+.instructions{
+    background-color: black;
+    
+    text-align: right !important; 
+}
+
+#calculator #display{
+    background-color: #000;
+    text-align: right;
+}
+
+#input{
+    font-size: .8rem;
+    font-weight: 500;
+    color:rgb(255, 166, 0) !important;
+}
+
+#output{
+    font-size: 24px;
+}
+
+
+
+
