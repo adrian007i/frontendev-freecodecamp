@@ -34,13 +34,9 @@
     background-color: rgb(0, 68, 102);
 }
 
-.instructions{
-    background-color: black;
-    
-    text-align: right !important; 
-}
 
-#calculator #display{
+
+#calculator #equation{
     background-color: #000;
     text-align: right;
 }

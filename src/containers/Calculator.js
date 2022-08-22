@@ -19,30 +19,50 @@ const Calculator = ({ current, full, setCurrentEquation, setFullEquation }) => {
 
 
     const btnClick = (event) => {
+        const { innerHTML, className } = event.target;
 
-        switch (event.target.className) {
-            // number pressed
-            case "number":
-                let num = event.target.innerHTML;
+        // number entered
+        if (className === "number") {
+            if (current === "0" && innerHTML === "0")
+                return;
+            else if (current === "0" || full.includes("=")) {
+                setCurrentEquation(innerHTML);
+                setFullEquation(innerHTML);
+            }
+            else {
+                // remove leading - + signs
+                setCurrentEquation((isNaN(current) && current !== "." ? "" : current) + innerHTML);
+                setFullEquation(full + "" + innerHTML);
+            }
+        }
+        // add or subtract  
+        // TODO : RESOLVE BUG WITH OPERATIONS
+        else if (innerHTML === "+" || innerHTML === "-" || innerHTML === "*" || innerHTML === "/") {
 
-                // Ensure multiple zeros isn't entered
-                let newCurrent = (current === "0" ? num : current + num);
-                setCurrentEquation(newCurrent);
-                break;
+            if ((full.length > 0 && full[full.length - 1] === "*" && innerHTML === '*') ||
+                (full.length > 0 && full[full.length - 1] === "/" && innerHTML === '/') ||
+                (full.length > 0 && full[full.length - 1] === "+" && innerHTML === '+') ||
+                (full.length > 1 && full[full.length - 1] === "-" && innerHTML === '+')) return;
 
-            // decimal places
-            case "decimal":
-                if (!(String(current).includes(".")))
-                    setCurrentEquation(current + ".");
-                break;
+            setFullEquation(full.includes("=") ? current + innerHTML : full + innerHTML);
+            setCurrentEquation(innerHTML);
+        }
 
-            // clear the calculator
-            case "ac":
-                setCurrentEquation(0);
-                setFullEquation(0);
-                break;
-            default:
-                break;
+        // check valid decimal
+        else if (innerHTML === "." && !(String(current).includes("."))) {
+            setCurrentEquation((isNaN(current) ? "" : current) + innerHTML);
+            setFullEquation(full + ".");
+        }
+        // clear the form
+        else if (innerHTML === "AC") {
+            setCurrentEquation("0");
+            setFullEquation("");
+        }
+        else if (innerHTML === "=") {
+            // eslint-disable-next-line
+            const total = String(eval(full));
+            setCurrentEquation(total);
+            setFullEquation(full + "=" + total)
         }
     }
 
@@ -53,9 +73,9 @@ const Calculator = ({ current, full, setCurrentEquation, setFullEquation }) => {
 
                     <thead>
                         <tr>
-                            <td colSpan="4" id="display">
+                            <td colSpan="4" id="equation" >
                                 <div id="input">{full}</div>
-                                <div id="output">{current}</div>
+                                <div id="display">{current}</div>
                             </td>
                         </tr>
                     </thead>
@@ -69,13 +89,13 @@ const Calculator = ({ current, full, setCurrentEquation, setFullEquation }) => {
                             <td className="number" onClick={btnClick} id="seven">7</td>
                             <td className="number" onClick={btnClick} id="eight">8</td>
                             <td className="number" onClick={btnClick} id="nine">9</td>
-                            <td className="symbol" onClick={btnClick} id="subtract">-</td>
+                            <td className="symbol minus" onClick={btnClick} id="subtract">-</td>
                         </tr>
                         <tr>
                             <td className="number" onClick={btnClick} id="four">4</td>
                             <td className="number" onClick={btnClick} id="five">5</td>
                             <td className="number" onClick={btnClick} id="six">6</td>
-                            <td className="symbol" onClick={btnClick} id="add">+</td>
+                            <td className="symbol add" onClick={btnClick} id="add">+</td>
                         </tr>
                         <tr>
                             <td className="number" onClick={btnClick} id="one">1</td>
