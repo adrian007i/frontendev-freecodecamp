@@ -1,0 +1,30 @@
+#clockBox{
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    width: 200px;
+}
+
+#clock{
+    text-align: center;
+    padding: 30px;
+    border: 1px solid #ccc;
+}
+
+#controls{ 
+    text-align: left;
+}
+
+.change{ 
+
+    /* pointer-events:none; */
+}
+
+.btn{
+    cursor: pointer;
+}
+
+.red{
+    color:red;
+}

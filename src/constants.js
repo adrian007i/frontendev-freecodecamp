@@ -8,3 +8,12 @@ export const KEY_PRESS = "KEY_PRESS"
 // CALCULATOR
 export const SET_FULL_EQUATION = 'FULL_EQUATION';
 export const SET_CURRENT_EQUATION = 'CURRENT_EQUATION';
+
+// CLOCK
+export const SET_BREAK= 'SET_BREAK';
+export const SET_SESSION = 'SET_SESSIION'; 
+export const SET_SESSION_TYPE = "SET_SESSION_TYPE";
+export const SET_BREAK_TYPE = "SET_BREAK_TYPE";
+export const SET_CURRENT = "SET_CURRENT"; 
+export const SET_PLAY = "SET_PLAY";
+export const RESET_STATE = "RESET_STATE";
